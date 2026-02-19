@@ -1,0 +1,1380 @@
+why static method   // class method
+_________________________
+This method releated to class . common method for all object.  share method .
+before object that method create.
+non static and other static method call another static method directly.
+
+(1)static data or (class data )  manipulation static method
+(2)private static data static method needed
+(3)private constructor    
+(4)utility class   
+
+(1)
+class A
+{
+    static int data;
+    static void show()
+    {
+        data=10;
+        System.out.println(data); //10
+    }
+}
+class Test
+{
+    public static void main(String arg[])
+    {
+          System.out.println(A.data);//0
+           A.show();
+           System.out.println(A.data);//10
+
+    }
+}
+
+
+(2)private static data not acess outside class acess only static method
+class A
+{
+   private static int data;
+    static void show()
+    {
+        data=10;
+        System.out.println(data); //10
+    }
+}
+class Test
+{
+    public static void main(String arg[])
+    {
+         
+           A.show();
+         //System.out.println(A.data);//10 error
+
+    }
+
+}
+
+(3)
+private constructor we can not create object outside class.
+
+class A
+{
+   private A()
+   {
+
+   }
+}
+class Test
+{
+    public static void main(String arg[])
+    {
+         
+        //A ob=new A(); // error
+
+    }
+
+}
+
+solution static method that class .
+
+class A
+{
+   private A()
+   {
+        System.out.println("private constructor ");
+   }
+   static void create()
+   {
+       A ob=new A();
+   }
+}
+class Test
+{
+    public static void main(String arg[])
+    {
+         //A ob=new A(); error
+        A.create();
+
+    }
+
+}
+
+o/p:
+private constructor
+
+singleton class
+___________________
+class create only one object .
+
+rule:
+private constructor
+static method
+static object refernce
+
+
+class A {
+    static A ob;             // Static variable to hold the single instance of class A
+
+    private A() {
+        // Private constructor to prevent instantiation from outside the class
+    }
+
+    static A create() {
+        if (ob == null) {
+            ob = new A();    // Object is created only once
+        }
+        return ob;           // Same object is returned every time
+    }
+
+    void show() {
+        System.out.println("show method ");
+    }
+}
+
+class Test
+{
+    public static void main(String arg[])
+    {
+       A obj=A.create();
+       A obj1=A.create();
+       System.out.println(obj == obj1);
+      obj.show();
+    }
+}
+
+
+(4) utilty class 
+
+class contain only static variable and static method that class is known as utilty class.
+That class object not reuried.
+
+prdefined utilty class
+_________________________
+Math
+Arrays
+
+class Mymath
+{
+   static int c=0;
+    static void add(int a,int b)
+    {
+       System.out.println("sum="+(a+b));
+    }
+    static int mult(int a,int b)
+    {
+        return a*b;
+    }
+}
+
+class Test
+{
+    public static void main(String arg[])
+    {
+        Mymath.add(10,20);
+        System.out.println(Mymath.mult(5,4));
+         System.out.println(Mymath.c);
+         Systemout.println(Math.pow(2,3));
+    }
+}
+
+
+
+why nonstatic method   // instance  method //object method
+____________________________________________________________________
+A non-static method (also called instance method) belongs to the object of the class, not to the class itself.
+
+
+Key Points
+Feature               Non-Static Method
+Belongs to  Object (Instance)
+Access to Instance Variables    ✅ Yes
+Access to Static Variables  ✅ Yes
+Requires Object Creation    ✅ Yes
+Used When   Behavior varies per object
+
+Reasons to Use Non-Static (Instance) Methods
+To access or modify instance (non-static) variables
+
+To perform object-specific behavior
+
+To follow real-world object behavior modeling
+
+To override in inheritance (polymorphism)
+
+(1) Accessing Instance Variables
+class Student {
+    String name;  // instance variable
+
+    void setName(String n)          //instance method
+     {
+        name = n;
+    }
+
+    void show()                            //instance method
+    {
+        System.out.println("Name: " + name);
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setName("Amit");
+        s1.show();  // Output: Name: Amit
+    }
+}
+
+Here, each object has its own name. So we need non-static methods to work with object-specific data.
+
+
+
+(2) Object-Specific Behavior
+
+
+class Circle {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    double area() {
+        return 3.14 * radius * radius;
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Circle c1 = new Circle(3);
+        Circle c2 = new Circle(5);
+
+        System.out.println(c1.area());  // Output: 28.26
+        System.out.println(c2.area());  // Output: 78.5
+    }
+}
+Each Circle object has a different radius, so the area() method must be non-static
+
+(3) we can acess private instance outside class requried instance method
+class A
+{
+    private int x;
+    A()
+    {
+      x=10;
+    }
+    int getX()
+    {
+        return x;
+    }
+
+}
+class Test
+{
+      publc static void main(String arg[])
+      {
+         A ob=new A();
+         System.out.println(ob.getX());
+      }
+}
+
+Static vs Non-Static Methods – Quick Comparison
+Feature             Static Method        Non-Static Method
+Belongs to              Class                           Object
+Objectrequired       ❌ No                      ✅ Yes
+Accesinstance var      ❌ No                    ✅ Yes
+Access static var        ✅ Yes                ✅ Yes
+Common use case Utility, Singleton         Object-specific behavior
+
+
+both static and non static method and variable  example
+_____________________________________
+
+class Employee {
+    static String company = "ABC Ltd";  // shared by all
+    String name;
+
+    Employee(String name) {
+        this.name = name;
+    }
+
+    void show() {
+        System.out.println(name + " works at " + company);
+    }
+
+    static void changeCompany(String c) {
+        company = c;
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Employee e1 = new Employee("Ravi");
+        Employee e2 = new Employee("Kiran");
+
+        e1.show();  // Ravi works at ABC Ltd
+        e2.show();  // Kiran works at ABC Ltd
+
+        Employee.changeCompany("XYZ Ltd");
+
+        e1.show();  // Ravi works at XYZ Ltd
+        e2.show();  // Kiran works at XYZ Ltd
+    }
+}
+
+
+
+
+static  block   and non static block
+______________________________________
+
+one class one time static block excute
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+
+        }
+
+           static
+         {
+                 System.out.println("excution before static method only once ");
+         }
+}
+
+
+o/p:
+
+excution before static method only once
+main method start
+
+
+non static block
+________________________
+per object per non static block exceute.
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+
+        }
+
+    
+         {
+                 System.out.println("excution non static block before constructor ");
+         }
+}
+
+
+o/p:
+main method start
+
+
+
+
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           Test t=new Test();
+
+        }
+
+
+         {
+                 System.out.println("excution non static block before constructor ");
+         }
+}
+
+
+
+o/p:
+main method start
+excution non static block before constructor
+
+
+
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           Test t=new Test();
+           Test t1=new Test();
+           Test t2=new Test();
+
+        }
+
+
+         {
+                 System.out.println("excution non static block before constructor ");
+         }
+}
+
+
+main method start
+excution non static block before constructor
+excution non static block before constructor
+excution non static block before constructor
+
+
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           Test t=new Test();
+           Test t1=new Test();
+           Test t2=new Test();
+
+        }
+
+
+         {
+                 System.out.println("excution non static block before constructor ");
+         }
+
+         static
+         {
+             System.out.println("static block execute before static method only once");
+         }
+}
+
+
+
+o/p:
+static block execute before static method only once
+main method start
+excution non static block before constructor
+excution non static block before constructor
+excution non static block before constructor
+
+
+
+
+
+ class Test
+{
+      
+        Test()
+        {
+            System.out.println("Test constructor ");
+        }
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           Test t=new Test();
+           Test t1=new Test();
+           Test t2=new Test();
+
+        }
+
+
+         {
+                 System.out.println("excution non static block before constructor ");
+         }
+
+         static
+         {
+             System.out.println("static block excute before static method only once");
+         }
+}
+
+
+
+o/p:
+static block excute before static method only once
+main method start
+excution non static block before constructor
+Test constructor
+excution non static block before constructor
+Test constructor
+excution non static block before constructor
+Test constructor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Test {
+    
+    // Static block: executes only once when class is loaded
+    static {
+        System.out.println("static block excute before static method only once");
+    }
+
+    // Non-static block: executes before constructor for each object
+    {
+        System.out.println("excution non static block before constructor ");
+    }
+
+    // Constructor: runs after the non-static block for each object
+    Test() {
+        System.out.println("Test constructor ");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("main method start");
+
+        Test t = new Test();   // Object 1
+        Test t1 = new Test();  // Object 2
+        Test t2 = new Test();  // Object 3
+    }
+}
+
+ Execution Flow
+Class is loaded into memory → static block executes once
+
+main method starts
+
+When an object is created:
+
+Non-static block runs
+
+Then constructor runs
+
+This repeats for each object
+
+
+o/p:
+static block excute before static method only once
+main method start
+excution non static block before constructor 
+Test constructor 
+excution non static block before constructor 
+Test constructor 
+excution non static block before constructor 
+Test constructor
+
+
+
+class X
+{
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+          
+
+        }
+
+
+}
+
+
+
+o/p;
+main method start
+
+
+
+
+
+class X
+{
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+          X ob=new X();
+
+        }
+
+
+}
+
+
+
+o/p:
+main method start
+static block  X
+ non static block X
+X constructor
+
+
+
+class X
+{
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+          X ob=new X();
+           X ob1=new X();
+
+        }
+
+
+}
+
+
+o/p:
+main method start
+static block  X
+ non static block X
+X constructor
+ non static block X
+X constructor
+
+
+
+only static block excute 
+______________________________
+
+
+class X
+{
+      static int a=10;
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           System.out.println(X.a);
+
+        }
+
+
+}
+
+
+o/p:
+
+main method start
+static block  X
+10
+
+
+class X
+{
+      static int a=10;
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           System.out.println(X.a);
+           System.out.println(X.a);
+
+        }
+
+
+}
+
+
+
+o/p:
+main method start
+static block  X
+10
+10
+
+
+
+
+class X
+{
+       static void show()
+       {
+         System.out.println("show static method ");
+       }
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           X.show();
+
+        }
+
+
+}
+o/p:
+main method start
+static block  X
+show static method
+
+
+
+
+
+
+
+
+
+
+class X
+{
+       static void show()
+       {
+         System.out.println("show static method ");
+       }
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           X.show();
+
+        }
+
+
+}
+
+
+o/p:
+main method start
+static block  X
+show static method
+show static method
+
+
+
+
+class X
+{
+       void show()
+       {
+         System.out.println("non static show method ");
+       }
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+          X ob=new X();
+          ob.show();
+        }
+
+
+}
+
+
+o/p:
+
+main method start
+static block  X
+ non static block X
+X constructor
+non static show method
+
+
+
+class X
+{
+       void show()
+       {
+         System.out.println("non static show method ");
+       }
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+          X ob=new X();
+          ob.show();
+          ob.show();
+        }
+
+
+}
+
+o/p:
+
+main method start
+static block  X
+ non static block X
+X constructor
+non static show method
+non static show method
+
+
+class X
+{
+       void show()
+       {
+         System.out.println("non static show method ");
+       }
+           X()
+           {
+                    System.out.println("X constructor ");
+           }
+
+         {
+                 System.out.println(" non static block X ");
+         }
+
+         static
+         {
+             System.out.println("static block  X");
+         }  
+         static void disp()
+         {
+            System.out.println("static disp method ");
+         }
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           X.disp();
+        }
+
+
+}
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+main method start
+static block  X
+static disp method
+
+
+
+
+class X
+{
+
+       static int x;  //class variable // static data memeber
+       int y; //non static dattamember //instance variable
+       
+           X()
+           {
+                    System.out.println("X constructor " +"  "+x+"  "+y);
+           }
+
+         {
+                 System.out.println(" non static block Y= "+y);
+         }
+
+         static
+         {
+             System.out.println("static block  X value= "+x);
+         }  
+         static int show()
+         {
+            x=5;
+            return x+2;
+
+         }
+             int disp()
+         {
+            y=10;
+            return y+2;
+
+         }
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           X ob=new X();
+        }
+
+
+}
+
+o/p:
+main method start
+static block  X value= 0
+ non static block Y= 0
+X constructor   0  0
+
+
+
+
+class X
+{
+
+       static int x=show();  //class variable // static data memeber
+       int y=disp(); //non static dattamember //instance variable
+       
+           X()
+           {
+                    System.out.println("X constructor " +"  "+x+"  "+y);
+           }
+
+         {
+                 System.out.println(" non static block Y= "+y);
+         }
+
+         static
+         {
+             System.out.println("static block  X value= "+x);
+         }  
+         static int show()
+         {
+            System.out.println("x initlize ");
+            x=5;
+            return x+2;
+
+         }
+             int disp()
+         {
+            System.out.println("y initlize ");
+            y=10;
+            return y+2;
+
+         }
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           X ob=new X();
+        }
+
+
+}
+
+
+o/p:
+main method start
+x initlize
+static block  X value= 7
+y initlize
+ non static block Y= 12
+X constructor   7  12
+
+
+
+
+class X
+{
+
+       static int x=show();  //class variable // static data memeber
+       int y=disp(); //non static dattamember //instance variable
+       
+           X()
+           {
+                    System.out.println("X constructor " +"  "+x+"  "+y);
+           }
+
+         {
+                 System.out.println(" non static block Y= "+y);
+                 y=40;
+         }
+
+         static
+         {
+             System.out.println("static block  X value= "+x);
+             x=30;
+         }  
+         static int show()
+         {
+            System.out.println("x initlize ");
+            x=5;
+            return x+2;
+
+         }
+             int disp()
+         {
+            System.out.println("y initlize ");
+            y=10;
+            return y+2;
+
+         }
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           X ob=new X();
+           System.out.println(ob.x+" "+ob.y);
+        }
+
+
+}
+
+o/p:
+
+main method start
+x initlize
+static block  X value= 7
+y initlize
+ non static block Y= 12
+X constructor   30  40
+30 40
+
+
+
+
+class X
+{
+
+      
+       
+           X()
+           {
+                    System.out.println("X constructor " +"  "+x+"  "+y);
+           }
+
+         {
+                 System.out.println(" non static block Y= "+y);
+                 y=40;
+         }
+
+         static
+         {
+             System.out.println("static block  X value= "+x);
+             x=30;
+         }  
+         static int show()
+         {
+            System.out.println("x initlize ");
+            x=5;
+            return x+2;
+
+         }
+             int disp()
+         {
+            System.out.println("y initlize ");
+            y=10;
+            return y+2;
+
+         }
+          static int x=show();  //class variable // static data memeber
+       int y=disp(); //non static dattamember //instance variable
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           X ob=new X();
+           System.out.println(ob.x+" "+ob.y);
+        }
+
+
+}
+
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac Test.java
+Test.java:12: error: illegal forward reference
+                 System.out.println(" non static block Y= "+y);
+                                                            ^
+Test.java:18: error: illegal forward reference
+                 System.out.println("static block  X value= "+x);
+                                                              ^
+2 errors
+
+
+
+
+
+class X
+{
+
+       static int x=show();  //class variable // static data memeber
+       int y=disp(); //non static dattamember //instance variable
+       
+           X()
+           {
+                    System.out.println("X constructor " +"  "+x+"  "+y);
+           }
+
+         {
+                 System.out.println(" non static block Y= "+y);
+                 y=40;
+         }
+
+         static
+         {
+             System.out.println("static block  X value= "+x);
+             x=30;
+         }  
+         static int show()
+         {
+            System.out.println("static  initlize ");
+            x=5;
+            return x+2;
+
+         }
+             int disp()
+         {
+            System.out.println("non static  initlize ");
+            y=10;
+            return y+2;
+
+         }
+         static int z=show();
+         int zz=disp();
+
+}
+
+ class Test
+{
+      
+        
+         public static void main(String arg[])
+        {
+            
+           System.out.println("main method start");
+           X ob=new X();
+           System.out.println(ob.x+" "+ob.y+" "+ob.z+" "+ob.zz);
+        }
+
+
+}
+
+
+
+o/p:
+main method start
+static  initlize
+static block  X value= 7
+static  initlize
+non static  initlize
+ non static block Y= 12
+non static  initlize
+X constructor   5  10
+5 10 7 12
+
+
+
+ Java Execution Order – Summary Table
+Execution Step  What Runs   When
+1️ Static variables (in declaration order) When class is loaded (first time only)
+2️ Static blocks   After static variables
+3️Instance variables (in declaration order)   Every time object is created
+4️ Non-static blocks   After instance variables, before constructor
+5️ Constructor After non-static block 
+
+
+
+https://chatgpt.com/share/687dd2aa-804c-8008-be91-4da2700fe4a7

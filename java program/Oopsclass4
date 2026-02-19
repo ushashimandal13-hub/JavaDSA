@@ -1,0 +1,160 @@
+seeter (mutator)   and getetr(accsser)  method  pojo class
+______________________
+a class contain setter and getter method that class is known as pojo class .
+pojo(plain old java object)
+setter method
+______
+it is used to initlize datamember and reintlization.
+
+syntax:
+
+private datatype vname;
+
+void setVname(datatype vname)
+{
+	this.vname=vname;
+}
+
+private String name;
+
+void setName(String name)
+{
+	this.name=name;
+}
+
+private int age;
+
+void setAge(int age)
+{
+	this.age=age;
+}
+
+
+
+gettermethod
+_____
+it is used to access individual datamember  outside class.
+
+syntax:
+
+private datatype vname;
+
+returntype/datatype  getVname()
+{
+	return this.name;
+}
+
+private String name;
+
+String getName()
+{
+	return name;
+}
+
+private int age;
+
+int getAge()
+{
+	return age;
+}
+
+
+
+
+
+class Student
+{
+	private String name;
+	priavte int age;
+	Student()
+	{
+
+	}
+	Student(String name,int age)
+	{
+	   this.name=name;
+	   this.age=age;
+	}
+	void setName(String name)
+	{
+	   this.name=name;
+	}
+	void setAge(int age)
+	{
+	    this.age=age;
+	}
+	String getName()
+	{
+	    return this.name;
+	}
+	String getAge()
+	{
+	   return age; //automatically this.age;
+	}
+}
+
+class StudentTest
+{
+	  public static void main(String arg[])
+	  {
+	      Student s=new Student();
+	      s.setName("muna");
+	      s.setAge(20);
+	      System.out.println("name="+s.getName());
+	      System.out.println("asage="+s.getAge());
+	  }
+}
+
+o/p:
+muna
+20
+
+
+
+
+class Student
+{
+	private String name;
+	priavte int age;
+	Student()
+	{
+
+	}
+	Student(String name,int age)
+	{
+	   this.name=name;
+	   this.age=age;
+	}
+	void setName(String name)
+	{
+	   this.name=name;
+	}
+	void setAge(int age)
+	{
+	    this.age=age;
+	}
+	String getName()
+	{
+	    return this.name;
+	}
+	String getAge()
+	{
+	   return age; //automatically this.age;
+	}
+}
+
+class StudentTest
+{
+	  public static void main(String arg[])
+	  {
+	      Student s=new Student("muna",20);
+	      s.setName("muna das");
+	      s.setAge(25);
+	      System.out.println("name="+s.getName());
+	      System.out.println("asage="+s.getAge());
+	  }
+}
+
+o/p:
+name=muna das
+age=25

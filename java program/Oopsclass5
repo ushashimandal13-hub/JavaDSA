@@ -1,0 +1,468 @@
+
+constructor :
+
+what is constructor :
+constructor is same as classname.
+it looks like special method.
+it have no return type
+Example:
+class classname
+{
+	classname()
+	{
+
+	}
+}
+
+whenever object is created constructor block automatical execute.
+inside the constructor initlize the datamember.
+if we write returntype before constructor that is known as method
+There are two types of constructor
+
+(1)default constructor  (zero argument constructor )
+(2)parameterized constructor 
+
+(1)default constructor :
+
+if we do not any constructor compiler provide default constructor.
+
+class A
+{
+	
+}
+
+by default compiler
+
+class A extends Object
+{
+	 A()
+	 {
+	   super();
+	 }
+}
+
+
+
+class Student
+{
+	
+}
+
+C:\Users\HP\Desktop>javac 1.java
+C:\Users\HP\Desktop>javap Student
+Compiled from "1.java"
+class Student {
+  Student();
+}
+
+if we write constructor compiler does not provide. 
+
+class Student
+{
+	String name;
+	int rollno;
+	double mark;
+	Student()
+	{
+	    name="muna";
+	    rollno=1;
+	    mark=90.50;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Student s=new Student();
+	   s.disp();
+	}
+}
+o/p:
+muna 1 90.50
+
+class Student
+{
+	String name;
+	int rollno;
+	double mark;
+	Student()
+	{
+	    name="muna";
+	    rollno=1;
+	    mark=90.50;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Student s=new Student();
+	   s.disp();
+	   Student s1=new Student();
+	   s1.disp();
+	}
+}
+o/p:
+muna 1 90.50
+muna 1 90.50
+
+Here all object datas are same.
+if we provide different object different values then use parameterize constructor.
+
+
+parameterized constructor
+________________________________
+
+class classname
+{
+	classname(formal argument)
+	{
+
+	}
+}
+
+compiler does not provide default constructor.
+
+
+
+classname objrefername=new classname();// error
+
+classname objrefername=new classname(actual argument);
+
+class Student
+{
+	String name;
+	int rollno;
+	double mark;
+	Student(String n,int r,double m)
+	{
+	    name=n;
+	    rollno=r; //by default this.rollno=r;
+	    this.mark=m;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+
+	   Student s=new Student("muna",1,90.50);
+	   s.disp();
+	  
+	}
+}
+o/p
+muna  1 90.50
+
+
+class Student
+{
+	String name;
+	int rollno;
+	double mark;
+	Student(String n,int r,double m)
+	{
+	    name=n;
+	    rollno=r; //by default this.rollno=r;
+	    this.mark=m;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+
+	   Student s=new Student("muna",1,90.50);
+	   s.disp();
+	    Student s1=new Student("kuna",2,80.50);
+	   s1.disp();
+	  // Student s2=new Student(); error   because  no default constructor
+	  // s2.disp();
+	  
+	}
+}
+o/p
+muna  1 90.50
+kuna 2 80.50
+
+
+
+import java.util.Scanner;
+class Student
+{
+	String name;
+	int rollno;
+	double mark;
+	Student(String n,int r,double m)
+	{
+	    name=n;
+	    rollno=r; //by default this.rollno=r;
+	    this.mark=m;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+       Scanner sc=new Scanner(System.in);
+       System.out.println("enter name rollno and mark ");
+       String nm=sc.nextLine();
+        int r=sc.nextInt();
+        double ma=sc.nextDouble();
+	   Student s=new Student(nm,r,ma);
+	   s.disp();
+	  
+	}
+}
+
+o/p:
+
+C:\Users\HP\Desktop>javac 1.java
+C:\Users\HP\Desktop>java Test
+enter name rollno and mark
+sita
+2
+78
+sita 2 78.0
+
+
+class Student
+{
+	String name; //instance variable
+	int rollno;
+	double mark;
+	Student(String name,int rollno,double mark) //formal variable 
+	{
+	    name=name;
+	    rollno=rollno; 
+	    mark=mark;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+
+	   Student s=new Student("muna",1,90.50);
+	   s.disp();
+	  
+	}
+}
+o/p
+null 0 0.0
+
+
+
+
+class Student
+{
+	String name; //instance variable
+	int rollno;
+	double mark;
+	Student(String name,int rollno,double mark) //formal variable 
+	{
+	    this.name=name;
+	    this.rollno=rollno; 
+	    this.mark=mark;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+
+	   Student s=new Student("muna",1,90.50);
+	   s.disp();
+	  
+	}
+}
+o/p
+muna 1 90.50
+
+
+
+
+constructor overloading :
+
+_____________________________________
+
+if we write more than one constructor inside class is known as constructor overloading.
+
+overloading:
+
+same name   different signature.
+
+signature consist of no of argument,type and order.
+
+class A
+{
+	 A(int x)
+	 {
+
+	 }
+	 A(int y)
+	 {
+
+	 }
+}
+// error    same name same signature  not allow
+
+class A
+{
+     A()
+     {
+
+     }
+	 A(int x)
+	 {
+
+	 }
+	 A(double y) //type 
+	 {
+
+	 }
+	 A(int x,int y) //argument
+	 {
+
+	 }
+	 A(int x,double y) // order
+	 {
+
+	 }
+	 A(double x,int y)
+	 {
+
+	 }
+}
+
+
+
+class Student
+{
+	String name; //instance variable
+	int rollno;
+	double mark;
+	Student(String name,int rollno,double mark) //formal variable 
+	{
+	    this.name=name;
+	    this.rollno=rollno; 
+	    this.mark=mark;
+	}
+	Student()
+	{
+	     name=null;
+	     rollno=0;
+	     mark=0.0;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+
+	   Student s=new Student("muna",1,90.50);
+	   s.disp();
+	   Student s1=new Student();
+	   s1.disp();
+	}
+}
+
+muna 1 90.50
+null 0 0.0
+
+class Student
+{
+	String name; //instance variable
+	int rollno;
+	double mark;
+	Student(String name,int rollno,double mark) //formal variable 
+	{
+	    this.name=name;
+	    this.rollno=rollno; 
+	    this.mark=mark;
+	}
+	Student()
+	{
+	     name=null;
+	     rollno=0;
+	     mark=0.0;
+	}
+	Student(String nm,int r)
+	{
+	     name=nm;
+	     rollno=r;
+	}
+	Student(int r,double m)
+	{
+	     rollno=r;
+	     mark=m;
+	}
+    void disp()
+    {
+       System.out.println(name+" "+rollno+" "+mark);
+    }
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+
+	   Student s=new Student("muna",1,90.50);
+	   s.disp();
+	   Student s1=new Student();
+	   s1.disp();
+	   Student s2=new Student("kuna",2);
+	   s2.disp();
+	   Student s3=new Student(3,80);
+	   s3.disp();
+	}
+}
+o/p:
+C:\Users\HP\Desktop>javac 1.java
+
+C:\Users\HP\Desktop>java Test
+muna 1 90.5
+null 0 0.0
+kuna 2 0.0
+null 3 80.0
