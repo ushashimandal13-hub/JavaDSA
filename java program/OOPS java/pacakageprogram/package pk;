@@ -1,0 +1,6 @@
+package pk;
+public class MyMath
+{
+	int no1,no2;
+	public MyMath
+}
