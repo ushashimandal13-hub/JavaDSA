@@ -1,0 +1,418 @@
+class Test
+{
+	
+	Test()
+	{
+	     System.out.println("zero argument constructor");
+	}
+	Test(int x,int y)
+	{
+	     System.out.println("para constructor");
+	}
+	public static void main(String arg[])
+	{
+	    Test t=new Test();
+	}
+}
+o/p:zero argument constructor
+
+class Test
+{
+	
+	Test()
+	{
+	     System.out.println("zero argument constructor");
+	}
+	Test(int x,int y)
+	{
+	     System.out.println("para constructor");
+	}
+	public static void main(String arg[])
+	{
+	    Test t=new Test(10,20);
+	}
+}
+o/p:
+para constructor
+
+
+class Test
+{
+	
+	Test()
+	{
+	     System.out.println("zero argument constructor");
+	}
+	Test(int x,int y)
+	{
+	     System.out.println("para constructor");
+	}
+	public static void main(String arg[])
+	{
+	    Test t=new Test(10,20);
+	    Test t1=new Test();
+	}
+}
+o/p:
+para constructor
+zero argument constructor
+
+
+constructor chaining:
+one constrcutor call another constructor constructor chaining.
+
+class Test
+{
+	
+	Test()
+	{
+	     System.out.println("zero argument constructor");
+	}
+	Test(int x,int y)
+	{
+	      this();
+	     System.out.println("para constructor");
+	}
+	public static void main(String arg[])
+	{
+	    Test t=new Test(10,20); 
+	}
+}
+o/p:
+zero argument constructor
+para constructor
+
+class Test
+{
+	
+	Test()
+	{
+	      this(10,20);
+	     System.out.println("zero argument constructor");
+	}
+	Test(int x,int y)
+	{
+	     
+	     System.out.println("para constructor");
+	}
+	public static void main(String arg[])
+	{
+	    Test t=new Test(); 
+	}
+}
+o/p:
+para constructor
+zero argument constructor
+
+
+
+this():  it call own class default conctructor
+
+
+this(args) : it call own class parameter constructor
+
+
+constructor chaining example
+____________________________________________________________
+
+public class Student {
+  String name;
+  int age;
+  double mark;
+public Student(String name, int age, double mark) {
+	this(name,age);
+	this.mark = mark;
+}
+public Student(String name, int age) {
+	this(age);
+	this.name = name;
+}
+public Student(int age) {
+	this();
+	this.age = age;
+}
+public Student()
+{
+	
+}
+void show()
+{
+	 System.out.println(name+" "+age+" "+mark);
+}
+}
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      Student s=new Student("muna",18,90);
+      s.show();
+	}
+	}
+
+muna 18 90.0
+
+
+Types of method :
+
+Based on static keyword method are 2 types .
+(1)static method
+(2)non static method
+
+inside class static method call static variable and static method 
+(1)directly.(better)
+(2)by classname
+(3)by object refeernce
+(4)by object
+
+class Test
+{
+    static void show()
+    {
+    	System.out.println("show method");
+    }
+	public static void main(String arg[])
+	{
+	     show();//directly
+	     Test.show();//by classname
+	     Test t=null;
+         t.show();//by object reference
+	     new Test().show(); //by object
+	}
+
+}
+
+o/p:
+C:\Users\HP\Desktop>java Test
+show method
+show method
+show method
+show method
+
+outside class static method call another static method.
+(1)by classname (better)
+(2)by object refeernce
+(3)by object
+
+
+class A
+{
+	 static void show()
+    {
+    	System.out.println("show method");
+    }
+}
+
+class Test
+{
+   
+	public static void main(String arg[])
+	{
+	     
+	     A.show();//by classname  (better)
+	     A t=null;//by object reference
+         t.show();
+	     new A().show(); //by object
+	}
+
+}
+
+o/p:
+show
+show
+show
+
+
+static method call nonstatic method or non static datamember in same and also outside
+class by object
+_________________________________________________________________________________
+class A
+{
+	  void show()
+    {
+    	System.out.println("show method");
+    }
+}
+
+class Test
+{
+   
+	public static void main(String arg[])
+	{
+	     
+	   //  A.show();//by classname   error
+	   //  A t=null;//by object reference
+       //  t.show(); error
+	     new A().show(); //by object
+	     A t1=new A();
+	     t1.show();
+	}
+
+}
+
+
+o/p:
+show method
+show method
+
+
+inside class nonstatic method call nonstatic datamember and method
+                                     
+(1)directly(better)
+(2)by object
+class A
+{
+	  void show()
+    {
+    	System.out.println("show nonstatic  method");
+    	disp();//directly
+    	A obj=new A();
+    	obj.disp(); //by object
+    	//A.disp();  error by classname
+    }
+    void disp()
+    {
+            System.out.println("disp nonstatic  method");
+    }
+}
+
+class Test
+{
+   
+	public static void main(String arg[])
+	{
+	     A t1=new A();
+	     t1.show();
+	}
+
+}
+
+o/p:
+show nonstatic  method
+disp nonstatic  method
+disp nonstatic  method
+
+
+
+inside class nonstatic method call  static datamember and method
+(1)directly
+(2)by classname
+(3)by object
+
+___________________________________________________________________________
+class A
+{
+	  void show()
+    {
+    	System.out.println("show nonstatic  method");
+    	disp();//directly
+    	A.disp();  // by classname
+    	A obj=new A();
+    	obj.disp(); //by object
+    	
+    }
+    static void disp()
+    {
+            System.out.println("disp static  method");
+    }
+}
+
+class Test
+{
+   
+	public static void main(String arg[])
+	{
+	     A t1=new A();
+	     t1.show();
+	}
+
+}
+
+
+o/p:
+C:\Users\HP\Desktop>java Test
+show nonstatic  method
+disp static  method
+disp static  method
+disp static  method
+
+
+
+outside class nonstatic method call  static datamember and method
+(1)by classname
+(2)by object
+class A
+{
+	
+    static void disp()
+    {
+            System.out.println("disp static  method");
+    }
+}
+
+class Test
+{
+    void look()
+    {
+          A.disp(); //by classname
+          A ob=new A();
+          ob.disp();
+    }
+	public static void main(String arg[])
+	{
+	    Test t=new Test();
+	    t.look();
+	}
+
+}
+
+disp static  method
+disp static  method
+
+outside class nonstatic method call  non static datamember and method
+(1)by object
+
+
+class A
+{
+	
+     void disp()
+    {
+            System.out.println("disp nonstatic  method");
+    }
+}
+
+class Test
+{
+    void look()
+    {
+          A ob=new A();
+          ob.disp();
+    }
+	public static void main(String arg[])
+	{
+	    Test t=new Test();
+	    t.look();
+	}
+
+}
+
+o/p:
+disp non static method
+
+
+class Test
+{
+    void look()
+    {
+          A ob=new A();
+          ob.disp();
+    }
+	public static void main(String arg[])
+	{
+	    Test t=new Test();
+	    t.look();
+	}
+
+}

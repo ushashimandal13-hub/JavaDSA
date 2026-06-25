@@ -1,0 +1,377 @@
+if(condtion)
+{
+	
+}
+
+
+
+multiple if
+__________________
+program contain more than one if
+//wap take a number from keyboard check no is +ve -ve zero
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a number ");
+	  int no=sc.nextInt();
+	  if(no>0)
+	  {
+	     System.out.println("+ve number ");
+	  }
+	  if(no<0)
+	  {
+	    System.out.println("-ve");
+	  }
+	  if(no==0)
+	  {
+	   System.out.println(zero");
+	  }
+	}
+}
+
+
+//wap take two number from keyboard check both nos same 1st>2nd 2nd>1st
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter two numbers ");
+	  int no1=sc.nextInt();
+	  int no2=sc.nextInt();
+	  if(no1==no2)
+	  {
+	     System.out.println("same number ");
+	  }
+	  if(no1>no2)
+	  {
+	    System.out.println("1st>2nd");
+	  }
+	  if(no2>no1)
+	  {
+	   System.out.println("2nd>1st");
+	  }
+	}
+}
+
+
+nested if
+_________________
+if(c1)
+{
+	if(c2)
+	{
+          
+	}
+}
+
+
+
+//wap take a +ve number from keyboard check no is 2 digit number
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a number  ");
+	  int no=sc.nextInt();
+	  if(no>9)
+	  {
+
+	       if(no<100)
+	       {
+	          System.out.println("2 digit number ");
+	       }
+	  }
+	}
+}
+
+
+
+or
+//wap take a +ve number from keyboard check no is 2 digit number
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a number  ");
+	  int no=sc.nextInt();
+	  if(no>9 &&no<100)
+	       {
+	          System.out.println("2 digit number ");
+	       }
+	  
+	}
+}
+
+
+
+//wap take a number from keyboard check no is 2 digit number
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a number  ");
+	  int no=sc.nextInt();
+	  if(no<0)
+	  {
+	    no=-no;
+	  }
+	  if(no>9 &&no<100)
+	       {
+	          System.out.println("2 digit number ");
+	       }
+	  
+	}
+}
+
+
+
+//wap take a char from keyboard check char is upper case
+
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a char  ");
+	 char ch=sc.next().charAt(0);
+	  if(ch>='A' && ch<='Z')
+	       {
+	          System.out.println("upper case  ");
+	       }
+	  
+	}
+}
+
+
+or
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a char  ");
+	 char ch=sc.next().charAt(0);
+	 
+	  if(ch>=65 && ch<=90)
+	       {
+	          System.out.println("upper case  ");
+	       }
+	  
+	}
+}
+
+
+
+or
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a char  ");
+	 char ch=sc.next().charAt(0);
+	 
+	  if(Character.isUpperCase(ch))
+	       {
+	          System.out.println("upper case  ");
+	       }
+	  
+	}
+}
+
+
+
+
+
+
+
+//wap take a char from keyboard check char is upper case
+
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a char  ");
+	 char ch=sc.next().charAt(0);
+	  if(ch>='a' && ch<='z')
+	       {
+	          System.out.println("lower case  ");
+	       }
+	  
+	}
+}
+
+
+
+
+//convert upper case to lower case
+
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a char  ");
+	 char ch=sc.next().charAt(0);
+	  if(ch>='A' && ch<='Z')
+	       {
+	          ch=(char)(ch+32);
+	       }
+	       System.out.println(ch);
+	  
+	}
+}
+
+
+A 65
+B 66
+Z 90
+a 97
+b 98
+z 122
+
+//conver to lower case to uppercase
+
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a char  ");
+	 char ch=sc.next().charAt(0);
+	  if(ch>='a' && ch<='z')
+	       {
+	          ch=(char)(ch-32);
+	       }
+	       System.out.println(ch);
+	  
+	}
+}
+
+if else statement
+_____________________
+
+if(condtion)
+{
+	
+}
+else
+{
+	
+}
+
+//wap take a number from keyboard check number is +ve or -ve
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a number ");
+	  int no=sc.nextInt();
+	  if(no>=0)
+	  {
+	     System.out.println("+ve number ");
+	  }
+	  else
+	  {
+	      System.out.println("-ve number ");
+	  }
+	  
+	}
+}
+
+//wap take a number from keyboard check number is zero or nonzero
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a number ");
+	  int no=sc.nextInt();
+	  if(no==0)
+	  {
+	     System.out.println("zero number ");
+	  }
+	  else
+	  {
+	      System.out.println("non zero number ");
+	  }
+	  
+	}
+}
+
+
+
+
+//wap take a number from keyboard check number is even or odd
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a number ");
+	  int no=sc.nextInt();
+	  if(no%2==0)
+	  {
+	     System.out.println("even number ");
+	  }
+	  else
+	  {
+	      System.out.println("odd  number ");
+	  }
+	  
+	}
+}
+
+
+//wap take a salary from keyboard if sal>=5000 da=30% hra=20% if sal<5000 da=20% hra=10% then
+//display basic sal da hra and totalsal
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("enter a salary ");
+	  double sal=sc.nextDouble();
+	  double da,hra,totalsal
+	  if(sal>=5000)
+	  {
+	     da=sal*0.3;
+	     hra=sal*0.2;
+	  }
+	  else
+	  {
+	      da=sal*0.2;
+	     hra=sal*0.1;
+	  }
+	  totalsal=sal+da+hra;
+	  System.out.println("basic sal="+sal);
+	  System.out.println("da="+da);
+	  System.out.println("hra="+hra);
+	  System.out.println("total sal="+totalsal);
+	}
+}
+
+}

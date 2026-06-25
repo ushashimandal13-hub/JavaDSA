@@ -1,0 +1,16 @@
+public class demo2 {
+   demo2(double b)
+   {
+
+       System.out.println("hello");
+   }
+   demo2(int a){
+       this(56.8);
+       System.out.println("byy");
+      
+
+   }
+    public static void main(String[] args) {
+        demo2 demo = new demo2(6);
+    }
+}

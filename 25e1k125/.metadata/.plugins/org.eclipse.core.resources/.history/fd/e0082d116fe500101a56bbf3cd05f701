@@ -1,0 +1,61 @@
+package Assignment6;
+import java.util.Scanner;
+public class Q10 {
+public static void area(int side) {
+	        int a = side * side;
+        System.out.println("Area of Square: " + a);
+    }
+	    public static void area(int l, int b) {
+	        int a = l * b;
+	        System.out.println("Area of Rectangle: " + a);	        
+	    }
+	    public static void area(double r) {
+	        double a = Math.PI * r * r;
+	        System.out.println("Area of Circle: " + a);
+	    }
+	    public static void area(double s1,double s2,double s3) {
+	        double s = (s1+s2+s3)/2 ;
+	        double a = Math.sqrt(s*(s-s1)*(s-s2)*(s-s3));
+	        System.out.println("Area of Triangle: " + a);	        
+	    }
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+	        while (true) {
+	            System.out.println("\n=== AREA CALCULATOR (Method Overloading) ===");
+	            System.out.println("1. Area of Square");
+	            System.out.println("2. Area of Rectangle");
+	            System.out.println("3. Area of Circle");
+	            System.out.println("4. Area of Triangle");
+	            System.out.print("Enter your choice: ");
+	            int ch = sc.nextInt();
+
+	            switch (ch) {
+	            case 1:
+	                System.out.print("Enter side of square  ");
+	                int s = sc.nextInt();
+	                area(s);  // print happens inside method
+	            case 2:
+	                System.out.print("Enter length: "); 
+	                int l = sc.nextInt();
+	                System.out.print("Enter breadth: "); 
+	                int b = sc.nextInt();
+	                area(l, b);
+	            case 3:
+	                System.out.print("Enter radius: ");
+	                double r = sc.nextDouble();
+	                area(r);
+	            case 4:
+	                System.out.print("Enter side1: ");
+	                double s1 = sc.nextDouble();
+	                System.out.print("Enter side2: "); 
+	                double s2 = sc.nextDouble();
+	                System.out.println("Enter side3: ");
+	                double s3 = sc.nextDouble();
+	                area(s1,s2,s3);
+	            
+	            }
+	            
+	            }
+	        }
+	    }
+	

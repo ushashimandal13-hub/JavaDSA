@@ -1,0 +1,4 @@
+2026/01/16-23:32:50.970 2cec Reusing MANIFEST D:\25e1k125\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2026/01/16-23:32:51.044 2cec Recovering log #3
+2026/01/16-23:32:51.047 2cec (ignoring error) D:\25e1k125\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log: dropping 199 bytes; Corruption: checksum mismatch
+2026/01/16-23:32:51.080 2cec Reusing old log D:\25e1k125\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log 

@@ -1,0 +1,773 @@
+if you not call set()  method
+
+class Student
+{
+	 private String name;  //instance variable 
+	  private   int rollno;
+	   private   double mark;
+     /*void set(String n,int r,double m)    // set method initlization
+     {
+          
+         name=n;
+         rollno=r;
+         mark=m;
+     }*/
+     Student(String n,int r,double ) //constrcutor   same as classname
+     {
+              name=n;
+        	 rollno=r;
+             mark=m;
+     }
+     void disp()
+     {
+        System.out.println("my name= "+name);
+         System.out.println("my rollno= "+rollno);
+          System.out.println("my mark= "+mark);
+     }
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+
+	   Student s=new Student("muna",1,90.50);
+	   //s.set("muna",1,90.50);
+	 
+	  Student s1=new Student("kuna",2,80.50);
+	   //s1.set("kuna",2,80.50);
+	    s.disp();
+	  s1.disp();
+	   
+	}
+}
+
+
+
+
+
+
+
+class Student
+{
+	 private String name;  //instance variable 
+	  private   int rollno;
+	   private   double mark;
+    
+     Student(String n,int r,double m) //constrcutor   same as classname
+     {
+              name=n;
+        	 rollno=r;
+             mark=m;
+     }
+     void disp()
+     {
+        System.out.println("my name= "+name);
+         System.out.println("my rollno= "+rollno);
+          System.out.println("my mark= "+mark);
+     }
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+
+	   Student s=new Student("muna",1,90.50);
+	  Student s1=new Student("kuna",2,80.50);
+	    s.disp();
+	  s1.disp();
+	   
+	}
+}
+
+o/p:
+my name=muna
+my rollno=1
+my mark=90.50
+my name=kuna
+my rollno=2
+my mark=80.50
+
+
+
+
+constructor
+_____________
+constructor is same as classname
+
+class classname
+{
+	classname(argumnet)
+	{
+
+	}
+}
+
+it have no returntype.
+
+it have acess modifier (public ,protected ,private )
+
+it is is used to initilize instance variable of object 
+whenever object is created constructor execute.
+constructor not static .
+
+There are 2 types of constructor
+(1)zero argument constructor or default constructor
+(2)parameter constructor
+
+if we do not provide any constructor compiler provide deafult constructor
+
+if we wrtie compiler not provide
+
+
+
+
+class Test
+{
+	
+}
+
+1.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 1.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap Test
+Compiled from "1.java"
+class Test {
+  Test();
+}
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap java.lang.Math
+Compiled from "Math.java"
+public final class java.lang.Math {
+  public static final double E;
+  public static final double PI;
+  static double twoToTheDoubleScaleUp;
+  static double twoToTheDoubleScaleDown;
+  static final boolean $assertionsDisabled;
+  public static double sin(double);
+  public static double cos(double);
+  public static double tan(double);
+  public static double asin(double);
+  public static double acos(double);
+  public static double atan(double);
+  public static double toRadians(double);
+  public static double toDegrees(double);
+  public static double exp(double);
+  public static double log(double);
+  public static double log10(double);
+  public static double sqrt(double);
+  public static double cbrt(double);
+  public static double IEEEremainder(double, double);
+  public static double ceil(double);
+  public static double floor(double);
+  public static double rint(double);
+  public static double atan2(double, double);
+  public static double pow(double, double);
+  public static int round(float);
+  public static long round(double);
+  public static double random();
+  public static int addExact(int, int);
+  public static long addExact(long, long);
+  public static int subtractExact(int, int);
+  public static long subtractExact(long, long);
+  public static int multiplyExact(int, int);
+  public static long multiplyExact(long, int);
+  public static long multiplyExact(long, long);
+  public static int incrementExact(int);
+  public static long incrementExact(long);
+  public static int decrementExact(int);
+  public static long decrementExact(long);
+  public static int negateExact(int);
+  public static long negateExact(long);
+  public static int toIntExact(long);
+  public static long multiplyFull(int, int);
+  public static long multiplyHigh(long, long);
+  public static int floorDiv(int, int);
+  public static long floorDiv(long, int);
+  public static long floorDiv(long, long);
+  public static int floorMod(int, int);
+  public static int floorMod(long, int);
+  public static long floorMod(long, long);
+  public static int abs(int);
+  public static int absExact(int);
+  public static long abs(long);
+  public static long absExact(long);
+  public static float abs(float);
+  public static double abs(double);
+  public static int max(int, int);
+  public static long max(long, long);
+  public static float max(float, float);
+  public static double max(double, double);
+  public static int min(int, int);
+  public static long min(long, long);
+  public static float min(float, float);
+  public static double min(double, double);
+  public static double fma(double, double, double);
+  public static float fma(float, float, float);
+  public static double ulp(double);
+  public static float ulp(float);
+  public static double signum(double);
+  public static float signum(float);
+  public static double sinh(double);
+  public static double cosh(double);
+  public static double tanh(double);
+  public static double hypot(double, double);
+  public static double expm1(double);
+  public static double log1p(double);
+  public static double copySign(double, double);
+  public static float copySign(float, float);
+  public static int getExponent(float);
+  public static int getExponent(double);
+  public static double nextAfter(double, double);
+  public static float nextAfter(float, double);
+  public static double nextUp(double);
+  public static float nextUp(float);
+  public static double nextDown(double);
+  public static float nextDown(float);
+  public static double scalb(double, int);
+  public static float scalb(float, int);
+  static double powerOfTwoD(int);
+  static float powerOfTwoF(int);
+  static {};
+}
+
+
+class Test
+{
+	
+		public static void main(String arg[])
+		{
+			System.out.println("hi");
+
+		}
+}
+
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 1.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap Test
+Compiled from "1.java"
+class Test {
+  Test();
+  public static void main(java.lang.String[]);
+}
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+hi
+
+
+
+
+class Test
+{
+	    Test()
+	    {
+	    	System.out.println("zero argument constructor");
+	    }
+		public static void main(String arg[])
+		{
+			System.out.println("hi");
+
+		}
+}
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 1.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap Test
+Compiled from "1.java"
+class Test {
+  Test();
+  public static void main(java.lang.String[]);
+}
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+hi
+
+
+class Test
+{
+	    Test()
+	    {
+	    	System.out.println("zero argument constructor");
+	    }
+		public static void main(String arg[])
+		{
+			System.out.println("hi");
+			new Test();
+
+		}
+}
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 1.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+hi
+zero argument constructor
+
+
+
+
+public class Test
+{
+	    Test()
+	    {
+	    	System.out.println("zero argument constructor");
+	    }
+		public static void main(String arg[])
+		{
+			System.out.println("hi");
+			new Test();
+
+		}
+}
+
+1.java 
+error
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 1.java
+1.java:1: error: class Test is public, should be declared in a file named Test.java
+public class Test
+       ^
+1 error
+
+
+
+class name before public access modfier must be save that classname.java
+
+
+
+public class Test
+{
+	    Test()
+	    {
+	    	System.out.println("zero argument constructor");
+	    }
+		public static void main(String arg[])
+		{
+			System.out.println("hi");
+			new Test();
+
+		}
+}
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac Test.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+hi
+zero argument constructor
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap Test
+Compiled from "Test.java"
+public class Test {
+  Test();
+  public static void main(java.lang.String[]);
+}
+
+
+public class Test
+{
+		public static void main(String arg[])
+		{
+			System.out.println("hi");
+			new Test();
+
+		}
+}
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap Test
+Compiled from "Test.java"
+public class Test {
+  public Test();
+  public static void main(java.lang.String[]);
+}
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+hi
+
+
+
+
+
+zero argument constructor 
+_____________________
+it have no argument .
+all object value initlize same value.
+class classname
+{
+	classname()
+	{
+
+	}
+}
+
+
+
+ class Test
+{
+	
+	  Test()
+	  {
+          System.out.println("zero argument constructor ");
+	  }
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test();
+			Test t1=new Test();
+			Test t2=new Test();
+		}
+}
+
+
+o/p:
+zero argument constructor
+zero argument constructor
+zero argument constructor
+
+
+ class Test
+{
+	int x,y;
+	  Test()
+	  {
+          x=0;
+          y=0;
+	  }
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test();
+			Test t1=new Test();
+			Test t2=new Test();
+			System.out.println(t.x+" "+t.y);
+			System.out.println(t1.x+" "+t1.y);
+			System.out.println(t2.x+" "+t2.y);
+		}
+}
+
+
+o/p:
+0 0
+0 0
+0 0
+
+
+
+
+
+
+ class Test
+{
+	int x,y;
+	  Test()
+	  {
+          x=1;
+          y=2;
+	  }
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test();
+			Test t1=new Test();
+			Test t2=new Test();
+			System.out.println(t.x+" "+t.y);
+			System.out.println(t1.x+" "+t1.y);
+			System.out.println(t2.x+" "+t2.y);
+		}
+}
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+1 2
+1 2
+1 2
+
+
+here all object values are same .
+if we differnt object differnt value then choose parameter constructor
+
+class classname
+{
+	classname(argumnet)
+	{
+
+	}
+}
+
+
+
+
+
+ class Test
+{
+	int x,y;
+	  Test(int a,int b)
+	  {
+          x=a;
+          y=b;
+	  }
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test(1,2);
+			Test t1=new Test(3,4);
+			Test t2=new Test(5,6);
+			System.out.println(t.x+" "+t.y);
+			System.out.println(t1.x+" "+t1.y);
+			System.out.println(t2.x+" "+t2.y);
+}
+
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac Test.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+1 2
+3 4
+5 6
+
+
+
+ class Test
+{
+	int x,y;
+	  Test(int a,int b)
+	  {
+          x=a;
+          y=b;
+	  }
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test(1,2);
+			Test t1=new Test(3,4);
+			Test t2=new Test(5,6);
+			System.out.println(t.x+" "+t.y);
+			System.out.println(t1.x+" "+t1.y);
+			System.out.println(t2.x+" "+t2.y);
+		}
+}
+
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac Test.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap Test
+Compiled from "Test.java"
+class Test {
+  int x;
+  int y;
+  Test(int, int);
+  public static void main(java.lang.String[]);
+}
+
+
+
+
+
+ class Test
+{
+	int x,y;
+	  Test(int a,int b)
+	  {
+          x=a;
+          y=b;
+
+	  }
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test(1,2);
+			//Test t3=new Test(); error
+			System.out.println(t.x+" "+t.y);
+		   //System.out.println(t.a+" "+t.b); // error  a,b not object data 
+			
+		}
+}
+
+
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac Test.java
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+1 2
+
+
+
+
+ class Test
+{
+	int x,y;
+	  Test()
+	  {
+         
+
+	  }
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test();
+			
+	       Test t1=new Test(1,2); // error
+			
+		}
+}
+
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac Test.java
+Test.java:14: error: constructor Test in class Test cannot be applied to given types;
+               Test t1=new Test(1,2);
+                       ^
+  required: no arguments
+  found:    int,int
+  reason: actual and formal argument lists differ in length
+1 error
+
+
+
+
+ class Test
+{
+	int x,y;
+	Test()
+	{
+		
+	}
+	
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test();
+			System.out.println(t.x+" "+t.y);
+			
+		}
+}
+
+
+
+o/p:
+0 0
+
+
+constructor overoading 
+______________________
+ class Test
+{
+	int x,y;
+	  Test()
+	  {
+         
+
+	  }
+	  Test(int a,int b)
+	  {
+	  	x=a;
+	  	y=b;
+	  }
+		public static void main(String arg[])
+		{
+			
+			Test t=new Test();
+			
+	       Test t1=new Test(1,2);
+	       System.out.println(t.x+" "+t.y);
+	       System.out.println(t1.x+" "+t1.y);
+			
+		}
+}
+
+
+ class Rectangle
+ {
+ 	private int L,B;
+ 	Rectangle()
+ 	{
+
+ 	}
+ 	Rectangle(int x,int y)
+ 	{
+        L=x;
+        B=y;
+ 	}
+    void show()
+    {
+        System.out.println("length="+L);
+        System.out.println("breadth="+B);
+    }
+    int area()
+    {
+    	return L*B;
+    }
+    int perimeter()
+    {
+           return 2*(L+B);
+    }
+ }
+
+ class Test
+{
+	
+		public static void main(String arg[])
+		{
+			
+			Rectangle r1=new Rectangle();
+			r1.show();
+			System.out.println("area of rectangle="+r1.area());
+			System.out.println("perimeetr of rectangle="+r1.perimeter());
+			Rectangle r2=new Rectangle(4,5);
+			r2.show();
+			System.out.println("area of rectangle="+r2.area());
+			System.out.println("perimeetr of rectangle="+r2.perimeter());
+		}
+}
+
+
+
+
+
+
+
+
+class sqaure
+{
+	private int s;
+	sqaure()
+	{
+
+	}
+	sqaure(int x)
+	{
+		s=x;
+	}
+	void show()
+	{
+		System.out.println("side="+s);
+
+	}
+	int area()
+	{
+		return s*s;
+	}
+	int perimeter()
+	{
+		 return 4*s;
+
+	}
+}
+class Test
+{
+	public static void main (String arg[])
+	{
+		sqaure s1 = new sqaure();
+		s1.show();
+		System.out.println("area of square="+s1.area());
+		System.out.println("Perimeter of square="+s1.perimeter());
+		sqaure s2 = new sqaure(4);
+		s2.show();
+		System.out.println("area of square="+s2.area());
+		System.out.println("Perimeter of square"+s2.perimeter());
+
+	}
+}

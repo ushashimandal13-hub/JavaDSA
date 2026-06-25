@@ -1,0 +1,4 @@
+2026/02/24-16:20:06.835 2e84 Reusing MANIFEST D:\25e1k124\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2026/02/24-16:20:06.843 2e84 Recovering log #3
+2026/02/24-16:20:06.852 2e84 (ignoring error) D:\25e1k124\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log: dropping 52 bytes; Corruption: checksum mismatch
+2026/02/24-16:20:06.967 2e84 Reusing old log D:\25e1k124\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log 

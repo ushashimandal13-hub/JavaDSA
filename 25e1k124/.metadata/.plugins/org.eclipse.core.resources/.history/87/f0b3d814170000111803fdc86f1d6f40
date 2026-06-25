@@ -1,0 +1,21 @@
+package LAB1;
+import java.util.*;
+public class Q1 {
+
+	public static void main(String[] args) {
+		int num = Integer.parseInt(args[0]);
+		if(num>2) {
+			System.out.println("Enter a +ve integer greater than 2: ");
+		}
+	int count = 0;
+	while(num>=2) {
+		num = num/2;
+		count++;
+	}
+	System.out.println("the +ve integer from command line arg is "+num);
+	System.out.println("number of repeatedly divide "
+			+ "before getting the value less than 2 is "+count);
+		
+	}
+
+}

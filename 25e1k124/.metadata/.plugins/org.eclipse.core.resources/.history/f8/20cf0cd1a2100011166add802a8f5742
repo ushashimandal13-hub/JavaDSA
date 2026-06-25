@@ -1,0 +1,19 @@
+package Assignment2;
+
+public class Car {
+	String model;
+	int year;
+	void setDetails(String m, int y) {
+		model=m;
+		year=y;
+	}
+	void displayDetails() {
+		System.out.println("Car Model: "+model);
+		System.out.println("year= "+year);
+	}
+}
+class Test{
+	public static void main(String[]args) {
+		Car
+	}
+}

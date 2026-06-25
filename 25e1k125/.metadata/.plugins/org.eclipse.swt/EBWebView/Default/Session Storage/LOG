@@ -1,0 +1,4 @@
+2026/01/16-23:32:52.285 2cec Reusing MANIFEST D:\25e1k125\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Session Storage/MANIFEST-000001
+2026/01/16-23:32:52.288 2cec Recovering log #3
+2026/01/16-23:32:52.290 2cec (ignoring error) D:\25e1k125\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Session Storage/000003.log: dropping 3920 bytes; Corruption: checksum mismatch
+2026/01/16-23:32:52.295 2cec Reusing old log D:\25e1k125\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Session Storage/000003.log 

@@ -1,0 +1,23 @@
+package Assignment6;
+import java.util.*;
+public class Q11 {
+
+	public static int count (String str, char a) {
+		int c = 0;
+		for(int i = 0 ; i<str.length(); i++) {
+			if(str.charAt(i)==0)
+				c++ ;
+		}
+		return c ;
+		}
+		public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter a sting: ");
+			String str = sc.nextLine();
+			System.out.print("Enter a character:");
+			char a = sc.next().charAt(0) ;
+			System.out.println("The number of occurrences of '"+a+"' in '"+str+"' is"+count(str,a));
+
+	}
+
+}
