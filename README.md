@@ -16,6 +16,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/0020-valid-parentheses) |
+| [1071-greatest-common-divisor-of-strings](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/1071-greatest-common-divisor-of-strings) |
 ## Stack
 |  |
 | ------- |
@@ -40,4 +41,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/0121-best-time-to-buy-and-sell-stock) |
+## Math
+|  |
+| ------- |
+| [1071-greatest-common-divisor-of-strings](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/1071-greatest-common-divisor-of-strings) |
+## Euclidean Algorithm
+|  |
+| ------- |
+| [1071-greatest-common-divisor-of-strings](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/1071-greatest-common-divisor-of-strings) |
+## Greatest Common Divisor
+|  |
+| ------- |
+| [1071-greatest-common-divisor-of-strings](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/1071-greatest-common-divisor-of-strings) |
 <!---LeetCode Topics End-->
