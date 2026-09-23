@@ -8,6 +8,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0027-remove-element](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/0027-remove-element) |
 | [0035-search-insert-position](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/0035-search-insert-position) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/0121-best-time-to-buy-and-sell-stock) |
+| [1431-kids-with-the-greatest-number-of-candies](https://github.com/ushashimandal13-hub/JavaDSA/tree/master/1431-kids-with-the-greatest-number-of-candies) |
 ## Hash Table
 |  |
 | ------- |
